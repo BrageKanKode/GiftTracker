@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    var tabLayout: TabLayout? = null
-    var viewPager: ViewPager? = null
+    lateinit var tabLayout: TabLayout
+    lateinit var viewPager: ViewPager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,20 +17,20 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById<TabLayout>(R.id.tabs)
         viewPager = findViewById<ViewPager>(R.id.view_pager)
 
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("UPCOMING"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("PAST"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("GIFTS TO BUY"))
-        tabLayout!!.tabGravity = TabLayout.GRAVITY_FILL
+        tabLayout.addTab(tabLayout.newTab().setText("UPCOMING"))
+        tabLayout.addTab(tabLayout.newTab().setText("PAST"))
+        tabLayout.addTab(tabLayout.newTab().setText("GIFTS TO BUY"))
+        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
-        val adapter = MyAdapter(this, supportFragmentManager, tabLayout!!.tabCount)
-        viewPager!!.adapter = adapter
+        val adapter = MyAdapter(this, supportFragmentManager, tabLayout.tabCount)
+        viewPager.adapter = adapter
 
 
-        viewPager!!.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
 
-        tabLayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager!!.currentItem = tab.position
+                viewPager.currentItem = tab.position
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {
 
