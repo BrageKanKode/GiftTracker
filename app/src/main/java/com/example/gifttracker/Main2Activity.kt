@@ -3,9 +3,9 @@ package com.example.gifttracker
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         btnSaveEvent.setOnClickListener {
-            val intent = Intent(this, Main2Activity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
             // Create a shared preference instance
@@ -25,7 +25,7 @@ class Main2Activity : AppCompatActivity() {
 
             // create editor and add the key value pair to the preference
             val editor = sharedPreferences.edit()
-            editor.putString("KEY_STR", editText.text.toString())
+            editor.putString("KEY_STR", editText2.text.toString())
             editor.apply()
 
 
