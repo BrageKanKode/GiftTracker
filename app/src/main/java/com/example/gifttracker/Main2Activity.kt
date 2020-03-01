@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
@@ -30,7 +29,7 @@ class Main2Activity : AppCompatActivity() {
 
 
             val str = sharedPreferences.getString("KEY_STR", null)
-            Toast.makeText(this, str, Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, str, Toast.LENGTH_LONG).show()
 
         }
 

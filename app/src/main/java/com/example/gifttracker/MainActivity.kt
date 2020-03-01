@@ -1,20 +1,15 @@
 package com.example.gifttracker
 
 import MyAdapter
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager
-    private lateinit var sharedPreferences: SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,12 +43,6 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        // Create a shared preference instance
-        sharedPreferences = getSharedPreferences("com.example.gifttracker", Context.MODE_PRIVATE)
-
-        val str = sharedPreferences.getString("KEY_STR", null)
-        Toast.makeText(this, str, Toast.LENGTH_LONG).show()
-        textView2.text = str
 
     }
 }

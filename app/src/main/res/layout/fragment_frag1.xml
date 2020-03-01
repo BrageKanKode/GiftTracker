@@ -33,4 +33,14 @@
         app:layout_constraintVertical_bias="0.896"
         app:rippleColor="#FFFFFF" />
 
+    <TextView
+        android:id="@+id/textViewFrag1"
+        android:layout_width="307dp"
+        android:layout_height="357dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
