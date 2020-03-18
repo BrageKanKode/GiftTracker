@@ -1,5 +1,6 @@
 package com.example.gifttracker
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -7,13 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.gifttracker.database.EventsDTO
+import com.example.gifttracker.db.EventsDAO
 import kotlinx.android.synthetic.main.fragment_frag1.*
 import kotlinx.android.synthetic.main.fragment_frag1.view.*
 
 
 class Frag1 : Fragment() {
-
 
 
 
@@ -29,6 +33,8 @@ class Frag1 : Fragment() {
             )
         }
 
+
+        /*
     val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
         val editor = sharedPreferences?.edit()
@@ -46,9 +52,21 @@ class Frag1 : Fragment() {
 
         textViewFrag1?.text = str
 
+
+
+         */
+    val studentDb = EventsDAO(this.requireContext())
+    val adapter = EventsAdapter(this.requireContext()) {}
+
+
+
+        view.textViewFrag1.layoutManager = GridLayoutManager(context, 1)
+        view.textViewFrag1.adapter = adapter
+
+        val list = studentDb.fetchAll()
+        adapter.setStudentsList(list)
         return view
+
     }
-
-
 
 }
